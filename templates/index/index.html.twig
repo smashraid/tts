@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Todo Tiene Solucion{% endblock %}
+
+{% block body %}
+    <div class="hero">
+        <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-sm-around align-items-sm-baseline p-2 hero__content">            
+            <div class="align-items-center align-self-sm-end text-center p-3">
+                    <img src="images/informes2.jpg" alt="informes" class="hero__img" />
+                    <div>
+                        <h6 class="card-title">
+                            <a href="{{ path('informes') }}" class="text-white">Informes</a>
+                        </h6>
+                    </div>
+            </div>
+            <div class="align-items-center align-self-sm-end text-center p-3">
+                    <img src="images/secretaria2.jpg" alt="secretaria" class="hero__img" />
+                    <div>
+                        <h6 class="card-title">
+                            <a href="{{ path('secretaria') }}" class="text-white">Secretaria</a>
+                        </h6>                    
+                    </div>
+            </div>
+             <div class="align-items-center align-self-sm-end text-center p-3">
+                    <img src="images/consultorio-sicologico2.jpg" alt="secretaria" class="hero__img" />
+                    <div>
+                        <h6 class="card-title">
+                            <a href="{{ path('servicios') }}" class="text-white">Campos de Atenci&oacute;n</a>
+                        </h6>                    
+                    </div>
+            </div>
+            <div class="align-items-center align-self-sm-end text-center p-3">
+                    <img src="images/links-recomendados2.jpg" alt="links recomendados" class="hero__img" /> 
+                    <div>
+                        <h6 class="card-title">
+                            <a href="{{ path('recursos') }}" class="text-white">Links Recomendados</a>                            
+                        </h6>
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

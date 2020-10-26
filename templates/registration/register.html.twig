@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="images/register.jpg" alt="iniciar sesion" class="img-fluid rounded mx-auto d-block py-5" />
+        </div>
+        <div class="col-sm-6">
+            <div class="text-center">
+                <svg class="bi text-white" width="64" height="64" fill="currentColor">
+                    <use xlink:href="bootstrap-icons.svg#person-plus"/>
+                </svg>
+            </div>
+                {% for flashError in app.flashes('verify_email_error') %}
+                    <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+                {% endfor %}
+
+                
+
+                {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.email, {
+                        label: 'Correo'
+                    }) }}
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Contraseña'
+                    }) }}
+                    {{ form_row(registrationForm.agreeTerms, {
+                        label: 'Esta de acuerdo con las politicas de privacidad'
+                    }) }}
+
+                    <button type="submit" class="btn bg-metallic-seaweed text-white">Registrar</button>
+                {{ form_end(registrationForm) }}
+            </div>
+    </div>
+</div>
+{% endblock %}

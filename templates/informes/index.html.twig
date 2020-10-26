@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Informes{% endblock %}
+
+{% block body %}
+<div class="accordion site-accordion" id="accordionExample">
+  <div class="card bg-forest-green-traditional">
+    <div class="card-header site-accordion__title" id="headingOne">    
+      <h2 class="mb-0">        
+        <button class="btn btn-block text-left text-white" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <img src="images/quienes_somos.gif" alt="quienes somos" />
+        <span class="card__button-text">Quienes Somos</span>
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body bg-moss-green">
+        <p>Somos una organización sin fines de lucro que tiene como finalidad dar atención Psicológica a diferentes personas que no les es posible por diversos motivos asistir a una consulta personal.</p>
+		<p>Nuestro fin es llegar a los diferentes lugares y personas con el propósito de contribuir con la salud mental que favorece el normal desenvolvimiento frente a su entorno y consigo mismo.</p>
+		<p>Nuestro equipo esta formado por Psicólogos colegiados con larga trayectoria profesional en el area de la Psicología Clínica.</p>
+		<p>Hacemos uso del Internet como una herramienta terapéutica.</p>
+		<p>Somos un equipo de Psicólogos – Psicoterapeutas, que aplican estrategias adecuadas para ayudarte con tus problemas.</p>
+		<p>Estamos para atenderte, ya no tienes pretexto para no hacer frente a tu problema, enfrentándolo, podrás reducirlo o eliminarlo.</p>
+		<p>Somos profesionales que se ponen a tu disposición y requerimos de tu parte para poder ayudarte, con tu puntualidad a las citas, tu sinceridad, podremos lograr mejores resultados.</p>
+		<p>Las terapias se hacen en linea.</p>
+      </div>
+    </div>
+  </div>
+  <div class="card bg-forest-green-traditional">
+    <div class="card-header site-accordion__title" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-block text-left text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <img src="images/quienes_pueden_atenderse.gif" alt="quienes pueden atenderse" />
+          <span class="card__button-text">Quienes pueden atenderse</span>
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body bg-moss-green">
+        <p>Todas las personas que sientan o consideren que necesitan atención psicológica, inicialmente tendrá una primera entrevista y si el caso así lo requiere se iniciará un seguimiento psicológico.</p>
+        <p>La edad mínima es de 16 años, para lo cual se tendrá la primera entrevista con el tutor, quien dará el pase para el seguimiento. Edad máxima no hay.</p>
+        <p>Las personas que &nbsp;tienen un diagnóstico Psiquiátrico deben obtener el pase del Psicológo que realizará la entrevista inicial el cual le comunicará si podemos ser su terapia de apoyo.</p>
+        <p>No damos atención a personas con intento de suicidio o ideas suicidas debido a que necesitan una terapia&nbsp; Psiquiátrica y una consulta Psicológica de apoyo cara a cara según nuestras normas.</p>
+        <p>No damos atención a personas con un nivel intelectual inferior a la normal debido al tipo de terapia virtual.</p>
+        <p>Ofrecemos atención a personas que tomen la decisión de asumir la responsabilidad de cumplir con las citas dadas, respetando su tiempo.</p>
+        <p>La atención psicológica en menores de 16 años se dá en nuestras instalaciones, pudiendo llevar la primera consulta con el tutor por este medio.</p>
+        <p>Atendemos pacientes de todos los paises por ahora sólo en el idioma español.</p>      </div>
+      </div>
+  </div>
+  <div class="card bg-forest-green-traditional">
+    <div class="card-header site-accordion__title" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-block text-left text-white collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+           <img src="images/como_solicitar_cita.gif" alt="como pedir una cita" />
+           <span class="card__button-text">Como pedir una cita</span>
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body bg-moss-green">
+        <p>Para pedir cita deberás cumplir los siguientes pasos:</p>
+        <ol>
+          <li>Inscribirte.</li>
+          <li>Ir donde la secretaria.</li>
+          <li>La secretaria te comunicará si en ese momento hay Psicólogos disponibles o te dará una cita.</li>
+          <li>Deberás llegar a la hora puntual para tu cita.</li>
+          <li>Una vez que llegas deberás anunciarte con la secretaria la cual te pondrá en comunicación con el Psicólogo correspondiente.</li>
+          <li>Si llegas antes podrás ingresar al Chat que funciona como un lugar de reunión o espera.</li>
+          <li>Ten en cuenta que este trabajo supone respeto a la hora y a la real necesidad frente a un problema, no damos asesoría a estudiantes por ahora, no es un lugar para responder a tus preguntas sobre temas psicológicos, RECUERDA ES UN CONSULTORIO donde se ofrecerá CONSULTA PSICOLÓGICA.</li>
+          <li>Deberás especificar qué tipo de atención requieres:
+          <ul>
+            <li>PSICOLÓGICA.</li>
+            <li>PSICO-ESPIRITUAL.</li>
+          </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="information text-white">  
+  <h4 class="text-center pb-4">Detalles a tener en cuenta</h4>
+  <div class="d-flex flex-column flex-sm-row justify-content-center">
+    <div>
+      <p>Toda consulta es <strong>gratuita</strong>.</p>  
+      <p>Tu identidad es <strong>anonima</strong>. <br/> Te identificas por un usuario y contrase&ntilde;a</p>
+      <p>Nuestra comunicacion solo es <strong>en linea</strong>.</p>
+      <p>Puedes solicitar <strong>consultas presenciales</strong>.</p>
+      <p>Las <strong>donaciones</strong> son <strong>voluntarias</strong></p>
+    </div>
+    <img src="images/people-thinking.png" alt="informacion importante" height="250px" class="ml-3" />
+  </div>
+</div>
+{% endblock %}

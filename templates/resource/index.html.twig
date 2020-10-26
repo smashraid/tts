@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ResourceController!{% endblock %}
+
+{% block body %}
+
+{% set list = [
+    {'name': 'El Desaf&iacute;o', 'link': 'desafio.pps'},
+    {'name': 'Orificio en el barco', 'link': 'orificio_en_el_barco.pps'},
+    {'name': 'Nada sucede porque s&iacute;', 'link': 'nada_sucede_porque_si.pps'},
+    {'name': 'La Perla', 'link': 'perlas.pps'},
+    {'name': 'No te Rindas', 'link': 'no_te_rindas.pps'},
+    {'name': 'Bendici&oacute;n', 'link': 'bendicion.pps'},
+    {'name': 'Hermos&iacute;sima Inversi&oacute;n', 'link': 'hermosisima_inversion.pps'},
+    {'name': 'Nadie te ofende, T&uacute; te ofendes', 'link': 'nadie_te_ofende_tu_te_ofendes.pps'},
+    {'name': 'Hijos', 'link': 'hijos.pps'},
+    {'name': 'La &uacute;ltima Piedra', 'link': 'la_ultima_piedra.pps'},
+    {'name': 'C&oacute;mo bendecir a los Hijos', 'link': 'oracion_papa_mama.pps'},
+    {'name': 'Del gris a los colores', 'link': 'del_gris_a_los_colores.pps'},
+    {'name': 'Que la paz est&eacute; contigo', 'link': 'que_la_paz_este_contigo.pps'},
+    {'name': 'Felicidades', 'link': 'felicidades.pps'},
+    {'name': '&Aacute;mate Mujer', 'link': 'amate_mujer.pps'},
+    {'name': 'Mujeres', 'link': 'mujeres.pps'},
+    {'name': 'Un defecto en la mujer', 'link': 'un_defecto_en_la_mujer_.pps'},
+] %}
+
+<h3 class="text-white text-center py-3">Enlaces Recomendados</h4>
+<div class="row resources">
+    {% for item in list %}
+        <div class="col-sm-4">
+            <a href="pps/{{item.link}}" target="_blank" rel="noreferrer noopener" class="text-white">
+                <svg class="bi" width="32" height="32" fill="currentColor">
+                    <use xlink:href="bootstrap-icons.svg#link-45deg"/>
+                </svg>
+                {{item.name|raw}}
+            </a>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

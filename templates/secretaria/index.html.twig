@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Secreataria{% endblock %}
+
+{% block body %}
+<div class="card">
+  <div class="card-header bg-forest-green-traditional">
+        <h6 class="mb-0 d-flex">                
+            <img src="images/inscripcion.gif" alt="inscripcion" />
+            <span class="card__button-text text-white align-self-center">Para inscribirse comuniquese con la secretaria por el chat</span>        
+        </h6>
+  </div>
+  <div class="card-body bg-moss-green">
+    <div class="information text-white">  
+    <h4 class="text-center pb-4">Detalles a tener en cuenta</h4>
+    <div class="d-flex flex-column flex-sm-row justify-content-center">
+        <div>
+          <p>Toda consulta es <strong>gratuita</strong>.</p>  
+          <p>Tu identidad es <strong>anonima</strong>. <br/> Te identificas por un usuario y contrase&ntilde;a</p>
+          <p>Nuestra comunicacion solo es <strong>en linea</strong>.</p>
+          <p>Puedes solicitar <strong>consultas presenciales</strong>.</p>
+          <p>Las <strong>donaciones</strong> son <strong>voluntarias</strong></p>
+        </div>
+        <img src="images/people-thinking.png" alt="informacion importante" height="250px" class="ml-3" />
+    </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
