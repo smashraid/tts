@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Especialistas{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">       
+        {% for employee in employees %}
+            {% set picture = 'images/' ~ employee.photo %}
+            {% set titles = employee.title|split(',') %}
+            <div class="col-sm-6 pb-4">
+                <div class="card shadow-sm p-3 rounded bg-laurel-green">
+                    <img src="{{ asset(picture)}}" class="card-img-top mx-auto" alt="avatar" width="" />
+                    <div class="card-body">
+                        <h5 class="card-title text-center">
+                            {{ employee.name }}                            
+                        </h5>
+                        <p class="text-center"><small>Nro de Colegiatura {{ employee.code }}</small></p>
+                        <hr />
+                        <p class="card-text">
+                            {{ employee.bio }}
+                        </p>                    
+                    </div>
+                    <div class="card-footer bg-opal">
+                         <ul>
+                            {% for t in titles %}
+                                <li>{{ t }}</li>
+                            {% endfor %}
+                        </ul>           
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

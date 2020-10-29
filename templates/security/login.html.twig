@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-6">
-            <img src="images/login.jpg" alt="iniciar sesion" class="img-fluid rounded mx-auto d-block py-5" />
+            <img src="{{ asset('images/login.jpg') }}" alt="iniciar sesion" class="img-fluid rounded mx-auto d-block py-5" />
         </div>
         <div class="col-sm-6">
             <div class="text-center">
@@ -20,8 +20,8 @@
                 {% endif %}
 
                 {% if app.user %}
-                    <div class="mb-3">
-                        You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    <div class="alert alert-info my-3">
+                        Has iniciado sesi&oacute;n como {{ app.user.username }}, <a href="{{ path('app_logout') }}">Cerrar Sesi&oacute;n</a>
                     </div>
                 {% endif %}
 

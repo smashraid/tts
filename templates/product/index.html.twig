@@ -1,34 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProductController!{% endblock %}
+{% block title %}Campos de Atencion{% endblock %}
 
 {% block body %}
 <div class="products text-white">
-    <h1 class="text-center py-3">Campos de Atencion</h1>
+    <h1 class="text-center py-3">Campos de Atenci&oacute;n</h1>
     <div class="container">
         <div class="row">
             <div class="col-sm-6">
                 <figure class="figure">
-                    <img src="images/consultorio-espiritual2.jpg" class="figure-img img-fluid rounded" alt="..." />
-                    <figcaption class="figure-caption text-white text-center"><h4>Consulta Sicol&oacute;gica</h4></figcaption>
+                    <img src="{{ asset('images/consultorio-espiritual2.jpg') }}" class="figure-img img-fluid rounded" alt="..." />
+                    <figcaption class="figure-caption text-white text-center">
+                        <a href="{{ path('servicios_show', {slug: 's'}) }}" class="text-decoration-none">
+                            <h4>Consulta Sicol&oacute;gica</h4>
+                        </a>
+                    </figcaption>
                 </figure>
             </div>
             <div class="col-sm-6">
                 <figure class="figure">
-                    <img src="images/consultorio-espiritual2.jpg" class="figure-img img-fluid rounded" alt="..." />
-                    <figcaption class="figure-caption text-white text-center"><h4>Consulta Psico-Espiritual</h4></figcaption>
+                    <img src="{{ asset('images/consultorio-espiritual2.jpg') }}" class="figure-img img-fluid rounded" alt="..." />
+                    <figcaption class="figure-caption text-white text-center">
+                        <a href="{{ path('servicios_show', {slug: 'se'}) }}" class="text-decoration-none">
+                            <h4>Consulta Psico-Espiritual</h4>
+                        </a>
+                    </figcaption>
                 </figure>
             </div>
             <div class="col-sm-6">
                 <figure class="figure">
-                    <img src="images/consultorio-espiritual2.jpg" class="figure-img img-fluid rounded" alt="..." />
-                    <figcaption class="figure-caption text-white text-center"><h4>Consejer&iacute;a Espiritual</h4></figcaption>
+                    <img src="{{ asset('images/consultorio-espiritual2.jpg') }}" class="figure-img img-fluid rounded" alt="..." />
+                    <figcaption class="figure-caption text-white text-center">
+                        <a href="{{ path('servicios_show', {slug: 'e'}) }}" class="text-decoration-none">
+                            <h4>Consejer&iacute;a Espiritual</h4>
+                        </a>
+                    </figcaption>
                 </figure>
             </div>
             <div class="col-sm-6">
                 <figure class="figure">
-                    <img src="images/consultorio-espiritual2.jpg" class="figure-img img-fluid rounded" alt="..." />
-                    <figcaption class="figure-caption text-white text-center"><h4>Consejer&iacute;a sobre Diversidad Sexual</h4></figcaption>
+                    <img src="{{ asset('images/consultorio-espiritual2.jpg') }}" class="figure-img img-fluid rounded" alt="..." />
+                    <figcaption class="figure-caption text-white text-center">
+                        <a href="{{ path('servicios_show', {slug: 'ds'}) }}" class="text-decoration-none">
+                            <h4>Consejer&iacute;a sobre Diversidad Sexual</h4>
+                        </a>
+                    </figcaption>
                 </figure>
             </div>
         </div>
