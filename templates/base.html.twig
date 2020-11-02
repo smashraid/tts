@@ -82,6 +82,16 @@
                             <li class="nav-item" >
                                 <a class="nav-link text-white" href="{{ path('secretaria') }}">Inscribirse</a>
                             </li>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li class="nav-item" >
+                                    <a class="nav-link text-white" href="{{ path('admin') }}">Administraci&oacute;n</a>
+                                </li>
+                            {% endif %}
+                            {% if is_granted('ROLE_USER') %}
+                                <li class="nav-item" >
+                                    <a class="nav-link text-white" href="{{ path('schedule_show') }}">Actividad</a>
+                                </li>
+                            {% endif %}
                         </ul>
                     </nav>
                 {% endif %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Schedule{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1>Editar</h1>
+
+            {{ include('schedule/_form.html.twig', {'button_label': 'Actualizar'}) }}    
+
+            {{ include('schedule/_delete_form.html.twig') }}
+
+            <a href="{{ path('schedule_index') }}" class="btn bg-metallic-seaweed text-white mb-2">Regresar</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

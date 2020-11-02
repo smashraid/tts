@@ -30,13 +30,14 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
     private $urlGenerator;
     private $csrfTokenManager;
     private $passwordEncoder;
+    protected $authorizationChecker;
 
     public function __construct(EntityManagerInterface $entityManager, UrlGeneratorInterface $urlGenerator, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
-    {
+    {        
         $this->entityManager = $entityManager;
         $this->urlGenerator = $urlGenerator;
         $this->csrfTokenManager = $csrfTokenManager;
-        $this->passwordEncoder = $passwordEncoder;
+        $this->passwordEncoder = $passwordEncoder;        
     }
 
     public function supports(Request $request)
@@ -67,11 +68,11 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
             throw new InvalidCsrfTokenException();
         }
 
-        $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $credentials['email']]);
+        $user = $this->entityManager->getRepository(User::class)->findOneBy(['email' => $credentials['email']]);        
 
         if (!$user) {
             // fail authentication with a custom error
-            throw new CustomUserMessageAuthenticationException('Email could not be found.');
+            throw new CustomUserMessageAuthenticationException('Usuario no se encuentra en el sistema.');
         }
 
         return $user;
@@ -99,7 +100,15 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
         // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
         // redirect to some "app_homepage" route - of wherever you want
-        return new RedirectResponse($this->urlGenerator->generate('index'));
+        $user = $token->getUser();
+        $roles = $user->getRoles();
+        $url = 'dashboard';
+
+        if (in_array('ROLE_ADMIN', $roles)) {
+            $url = 'admin';
+        }
+
+        return new RedirectResponse($this->urlGenerator->generate($url));
     }
 
     protected function getLoginUrl()

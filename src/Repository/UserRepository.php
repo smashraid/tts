@@ -36,6 +36,24 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->flush();
     }
 
+    /**
+     * @return User[] Returns an array of User objects
+     */    
+    public function findAllBasic($lastname)
+    {        
+        $qb = $this->createQueryBuilder('u')
+            ->select(['u.id, u.name', 'u.lastname', 'u.phone', 'u.email']);
+
+        if ($lastname != null) {
+            $qb->andWhere('u.lastname LIKE :searchTerm')
+            ->setParameter('searchTerm', '%'.$lastname.'%');
+        }
+
+        $query = $qb->getQuery();
+
+        return $query->execute();
+    }
+
     // /**
     //  * @return User[] Returns an array of User objects
     //  */

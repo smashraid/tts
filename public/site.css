@@ -135,6 +135,10 @@ body {
     white-space: nowrap;
 }
 
+.invalid-feedback {
+    color: darkred !important;
+}
+
 @media (min-width: 768px) { 
     .hero__content {
         min-height: 500px;
