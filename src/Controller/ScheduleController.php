@@ -65,7 +65,7 @@ class ScheduleController extends AbstractController
         $user = $this->getUser();
         $schedules = $repository->findBy(
             ['user' => $user->getId()],
-            ['timestart' => 'ASC']
+            ['start' => 'ASC', 'timestart' => 'ASC'],            
         );        
 
         return $this->render('schedule/show.html.twig', [

@@ -102,7 +102,7 @@ class AppAuthenticator extends AbstractFormLoginAuthenticator implements Passwor
         // redirect to some "app_homepage" route - of wherever you want
         $user = $token->getUser();
         $roles = $user->getRoles();
-        $url = 'dashboard';
+        $url = 'schedule_show';
 
         if (in_array('ROLE_ADMIN', $roles)) {
             $url = 'admin';
