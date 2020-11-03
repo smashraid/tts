@@ -11,7 +11,7 @@
                 <h3>{{ schedule.start ? schedule.start|date('l') : '' }}</h3>
             </div>
             <div class="card-body">
-                <h5 class="card-title">{{ schedule.slot }}</h5>
+                <h5 class="card-title">{{ schedule.timestart|date('g:i A') }} - {{ schedule.timeend|date('g:i A') }}</h5>
                 <p class="card-text">Especialista: 	
                     {{ schedule.employee.name }}</p>
             </div>

@@ -23,7 +23,7 @@
                             <tr class="bg-opal">
                                 <th scope="col">{{ schedule.id }}</td>
                                 <td>{{ schedule.start ? schedule.start|date('Y-m-d') : '' }}</td>
-                                <td>{{ schedule.slot }}</td>
+                                <td>{{ schedule.timestart|date('g:i A') }} - {{ schedule.timeend|date('g:i A') }}</td>
                                 <td>{{ schedule.link }}</td>
                                 <td>
                                     {# <a href="{{ path('schedule_show', {'id': schedule.id}) }}" class="btn btn-link">Ver</a> #}

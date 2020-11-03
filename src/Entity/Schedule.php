@@ -20,11 +20,6 @@ class Schedule
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $slot;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $link;
 
     /**
@@ -44,22 +39,20 @@ class Schedule
      */
     private $employee;
 
+    /**
+     * @ORM\Column(type="time", nullable=true)
+     */
+    private $timestart;
+
+    /**
+     * @ORM\Column(type="time", nullable=true)
+     */
+    private $timeend;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getSlot(): ?string
-    {
-        return $this->slot;
-    }
-
-    public function setSlot(string $slot): self
-    {
-        $this->slot = $slot;
-
-        return $this;
-    }
+    }    
 
     public function getLink(): ?string
     {
@@ -105,6 +98,30 @@ class Schedule
     public function setEmployee(?Employee $employee): self
     {
         $this->employee = $employee;
+
+        return $this;
+    }
+
+    public function getTimestart(): ?\DateTimeInterface
+    {
+        return $this->timestart;
+    }
+
+    public function setTimestart(?\DateTimeInterface $timestart): self
+    {
+        $this->timestart = $timestart;
+
+        return $this;
+    }
+
+    public function getTimeend(): ?\DateTimeInterface
+    {
+        return $this->timeend;
+    }
+
+    public function setTimeend(?\DateTimeInterface $timeend): self
+    {
+        $this->timeend = $timeend;
 
         return $this;
     }
