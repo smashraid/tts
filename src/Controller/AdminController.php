@@ -34,7 +34,7 @@ class AdminController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $lastname = $form->get('lastname')->getData();            
+            $lastname = $form->get('lastname')->getData();
         }
 
         $users = $repository->findAllBasic($lastname);
@@ -75,5 +75,19 @@ class AdminController extends AbstractController
             'schedule' => $schedule,
             'form' => $form->createView(),
         ]);
+    }
+
+     /**
+     * @Route("/user/{id}", name="user_delete", methods={"DELETE"}, requirements={"id"="\d+"})
+     */
+    public function deleteuser(User $user, Request $request, LoggerInterface $logger)
+    {
+        if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($user);
+            $entityManager->flush();
+        }
+
+        return $this->redirectToRoute('admin');
     }
 }

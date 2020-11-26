@@ -47,7 +47,7 @@ class ScheduleFormType extends AbstractType
             ->add('timeend', TimeType::class, [
                 'input'  => 'datetime',
                 'widget' => 'choice',
-                'minutes' => [0, 30, 59],
+                'minutes' => [0, 30],
                 'label' => 'Hora Fin',
                 'constraints' => [
                     new NotBlank([

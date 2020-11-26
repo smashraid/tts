@@ -139,7 +139,7 @@ body {
     color: darkred !important;
 }
 
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
     .hero__content {
         min-height: 500px;
     }

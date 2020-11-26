@@ -1,45 +1,67 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Schedule index{% endblock %}
+{% block title %}Schedule index
+{% endblock %}
 
-{% block body %}    
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>Agenda</h1>
-                <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                            <tr class="bg-taupe-gray">
-                                <th>Id</th>
-                                <th>Fecha</th>
-                                <th>Hora</th>
-                                <th>Url</th>                                
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        {% for schedule in schedules %}
-                            <tr class="bg-opal">
-                                <th scope="col">{{ schedule.id }}</td>
-                                <td>{{ schedule.start ? schedule.start|date('Y-m-d') : '' }}</td>
-                                <td>{{ schedule.timestart|date('g:i A') }} - {{ schedule.timeend|date('g:i A') }}</td>
-                                <td>{{ schedule.link }}</td>
-                                <td>
-                                    {# <a href="{{ path('schedule_show', {'id': schedule.id}) }}" class="btn btn-link">Ver</a> #}
-                                    <a href="{{ path('schedule_edit', {'id': schedule.id}) }}" class="btn btn-link">Editar</a>
-                                </td>
-                            </tr>
-                        {% else %}
-                            <tr>
-                                <td colspan="5">no records found</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-                <a href="{{ path('schedule_new') }}" class="btn bg-metallic-seaweed text-white mb-2">Nuevo</a>
-            </div>
-        </div>
-    </div>
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				{{ form_start(form, {'attr': {'class': 'form-inline'}}) }}
+					{{ form_label(form.user, 'Apellido', { 'label_attr': {'class': 'sr-only'} }) }}
+					<div class="input-group mb-2">					
+						{{ form_widget(form.user, { 'attr': {'class': 'foo','placeholder':'Cliente Apellido'} }) }}
+					</div>
+					{{ form_label(form.employee, 'Apellido', { 'label_attr': {'class': 'sr-only'} }) }}
+					<div class="input-group mb-2">					
+						{{ form_widget(form.employee, { 'attr': {'class': 'foo','placeholder':'Especialista'} }) }}
+					</div>
+					<button type="submit" class="btn bg-metallic-seaweed text-white mb-2">Buscar</button>
+				{{ form_end(form) }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">				
+				<div class="table-responsive">
+					<table class="table table-bordered table-hover table-sm">
+						<thead>
+							<tr class="bg-taupe-gray">
+								<th>Id</th>
+								<th>Nombre</th>
+								<th>Especialista</th>
+								<th>Fecha</th>
+								<th>Hora</th>
+								<th>Url</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							{% for schedule in schedules %}
+								<tr class="bg-opal">
+									<th scope="col">{{ schedule.id }}</th>
+									<td>{{ schedule.user.name }}
+										{{ schedule.user.lastname }}</td>
+									<td>{{ schedule.employee.name }}</td>
+									<td>{{ schedule.start ? schedule.start|date('Y-m-d') : '' }}</td>
+									<td>{{ schedule.timestart|date('g:i A') }}
+										-
+										{{ schedule.timeend|date('g:i A') }}</td>
+									<td>{{ schedule.link }}</td>
+									<td>
+										{# <a href="{{ path('schedule_show', {'id': schedule.id}) }}" class="btn btn-link">Ver</a> #}
+										<a href="{{ path('schedule_edit', {'id': schedule.id}) }}" class="btn btn-link">Editar</a>
+									</td>
+								</tr>
+							{% else %}
+								<tr>
+									<td colspan="7">no se encontraron registros</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+				</div>
+				<a href="{{ path('schedule_new') }}" class="btn bg-metallic-seaweed text-white mb-2">Nuevo</a>
+			</div>
+		</div>
+	</div>
 {% endblock %}

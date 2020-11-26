@@ -7,18 +7,24 @@
     {% for schedule in schedules %}
         <div class="card text-white text-center bg-info mb-3" style="max-width: 18rem;">
             <div class="card-header">
+               <h1>{{ schedule.start ? schedule.start|date('F Y') : '' }}</h1>
+            </div>
+            <div class="card-body">
                 <h1 class="display-1">{{ schedule.start ? schedule.start|date('j') : '' }}</h1>
                 <h3>{{ schedule.start ? schedule.start|date('l') : '' }}</h3>
             </div>
-            <div class="card-body">
+            <div class="card-footer">
                 <h5 class="card-title">{{ schedule.timestart|date('g:i A') }} - {{ schedule.timeend|date('g:i A') }}</h5>
                 <p class="card-text">Especialista: 	
                     {{ schedule.employee.name }}</p>
-            </div>
-            <div class="card-footer">
                 <a href="{{ schedule.link }}" class="text-decoration-none text-white" target="_blank" rel="noopener noreferrer">Ingresar</a>
             </div>
-        </div>
+        </div>        
     {% endfor %}
+        {% if not schedules %}
+            <div class="alert alert-info" role="alert">
+                No existen citas
+            </div>
+        {% endif %}
     </div>
 {% endblock %}

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Schedule;
 use App\Entity\Employee;
 use App\Form\ScheduleFormType;
+use App\Form\SearchScheduleType;
 use App\Repository\ScheduleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -20,22 +21,41 @@ class ScheduleController extends AbstractController
 {
     /**
      * @IsGranted("ROLE_ADMIN")
-     * @Route("/", name="schedule_index", methods={"GET"})
+     * @Route("/", name="schedule_index", methods={"GET","POST"})
+     * @param ScheduleRepository $scheduleRepository
+     * @param Request $request
+     * @param LoggerInterface $logger
+     * @return Response
      */
-    public function index(ScheduleRepository $scheduleRepository): Response
+    public function index(ScheduleRepository $scheduleRepository, Request $request, LoggerInterface $logger): Response
     {
+        $form = $this->createForm(SearchScheduleType::class);
+        $form->handleRequest($request);
+        $user = null;
+        $employee = null;
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $user = $form->get('user')->getData();
+            $employee = $form->get('employee')->getData();
+        }
+        
+        $schedules = $scheduleRepository->findAllFilter($user, $employee);
+
         return $this->render('schedule/index.html.twig', [
-            'schedules' => $scheduleRepository->findAll(),
+            'schedules' => $schedules,
+            'form' => $form->createView(),
         ]);
     }
 
     /**
      * @IsGranted("ROLE_ADMIN")
      * @Route("/new", name="schedule_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
-        $schedule = new Schedule();        
+        $schedule = new Schedule();
         $form = $this->createForm(ScheduleFormType::class, $schedule);
         $form->handleRequest($request);
 
