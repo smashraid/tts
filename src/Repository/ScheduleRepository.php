@@ -8,6 +8,7 @@ use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\ORM\Query\Expr\Join;
 use Doctrine\Persistence\ManagerRegistry;
+use function Doctrine\ORM\QueryBuilder;
 
 /**
  * @method Schedule|null find($id, $lockMode = null, $lockVersion = null)
@@ -54,7 +55,7 @@ class ScheduleRepository extends ServiceEntityRepository
     /**
      * @return Schedule[] Returns an array of Schedule objects
      */
-    public function findAllFilter($user, $employee)
+    public function findAllFilter($user, $employee, $startDate, $endDate)
     {
         $qb = $this->createQueryBuilder('s')
             //->select(['s.id, s.link', 's.start', 's.timestart', 's.timeend', 's.user', 's.employee'])
@@ -69,6 +70,12 @@ class ScheduleRepository extends ServiceEntityRepository
         if ($employee != null) {
             $qb->andWhere('e.name LIKE :searchTermE')
                 ->setParameter('searchTermE', '%' . $employee . '%');
+        }
+
+        if ($startDate != null && $endDate != null) {
+            $qb->andWhere('s.start BETWEEN :from AND :to')
+                ->setParameter('from', $startDate)
+                ->setParameter('to', $endDate);
         }
 
         $query = $qb->getQuery();

@@ -33,13 +33,17 @@ class ScheduleController extends AbstractController
         $form->handleRequest($request);
         $user = null;
         $employee = null;
+        $startDate = null;
+        $endDate = null;
 
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->get('user')->getData();
             $employee = $form->get('employee')->getData();
+            $startDate = $form->get('start')->getData();
+            $endDate = $form->get('end')->getData();
         }
         
-        $schedules = $scheduleRepository->findAllFilter($user, $employee);
+        $schedules = $scheduleRepository->findAllFilter($user, $employee, $startDate, $endDate);
 
         return $this->render('schedule/index.html.twig', [
             'schedules' => $schedules,

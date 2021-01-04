@@ -5,5 +5,5 @@
     "emmet.includeLanguages": {
         "twig": "html"
     },
-    "symfony-vscode.phpExecutablePath": "C:\\\\Program Files\\\\php\\\\php.exe"
+    "symfony-vscode.phpExecutablePath": "C:\\Program Files\\php\\php.exe"
 }

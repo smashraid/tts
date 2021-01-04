@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55757fb5-d04d-47bc-9025-3ac5380ec4b0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/tts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tts.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RegistrationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/ScheduleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ScheduleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SearchScheduleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SearchScheduleType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/ScheduleRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ScheduleRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/product/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/product/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/schedule/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/schedule/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/schedule/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/schedule/show.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +150,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/public/index.php" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.debug" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunDashboard">
@@ -191,7 +184,8 @@
       <workItem from="1605139338238" duration="2332000" />
       <workItem from="1605156155489" duration="350000" />
       <workItem from="1605204156454" duration="2269000" />
-      <workItem from="1606419829673" duration="4065000" />
+      <workItem from="1606419829673" duration="4664000" />
+      <workItem from="1606764684413" duration="2667000" />
     </task>
     <servers />
   </component>

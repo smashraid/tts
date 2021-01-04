@@ -8,20 +8,33 @@
 		<div class="row">
 			<div class="col">
 				{{ form_start(form, {'attr': {'class': 'form-inline'}}) }}
-					{{ form_label(form.user, 'Apellido', { 'label_attr': {'class': 'sr-only'} }) }}
-					<div class="input-group mb-2">					
+				<div class="form-row align-items-center">
+					<div class="col-auto my-1">
+						{{ form_label(form.user, 'Apellido', { 'label_attr': {'class': 'sr-only'} }) }}
 						{{ form_widget(form.user, { 'attr': {'class': 'foo','placeholder':'Cliente Apellido'} }) }}
 					</div>
-					{{ form_label(form.employee, 'Apellido', { 'label_attr': {'class': 'sr-only'} }) }}
-					<div class="input-group mb-2">					
+					<div class="col-auto my-1">
+						{{ form_label(form.employee, 'Apellido', { 'label_attr': {'class': 'sr-only'} }) }}
 						{{ form_widget(form.employee, { 'attr': {'class': 'foo','placeholder':'Especialista'} }) }}
 					</div>
-					<button type="submit" class="btn bg-metallic-seaweed text-white mb-2">Buscar</button>
+				
+					<div class="col-auto my-1">
+						{{ form_label(form.start, 'F Inicio', { 'label_attr': {'class': 'sr-only'} }) }}
+						{{ form_widget(form.start, { 'attr': {'class': 'foo','placeholder':'F Iniicio'} }) }}
+					</div>
+					<div class="col-auto my-1">
+						{{ form_label(form.end, 'F Fin', { 'label_attr': {'class': 'sr-only'} }) }}
+						{{ form_widget(form.end, { 'attr': {'class': 'foo','placeholder':'F Fin'} }) }}
+					</div>				
+					<div class="col-auto my-1">
+						<button type="submit" class="btn bg-metallic-seaweed text-white mb-2">Buscar</button>
+					</div>
+					</div>
 				{{ form_end(form) }}
 			</div>
 		</div>
 		<div class="row">
-			<div class="col">				
+			<div class="col">
 				<div class="table-responsive">
 					<table class="table table-bordered table-hover table-sm">
 						<thead>
